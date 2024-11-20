@@ -45,7 +45,7 @@ const Profile = () => {
         console.error(error);
       });
   }, [dispatch, router.state.loginid, router.state.type]);
-
+ 
   const checkPasswordHandler = (e) => {
     e.preventDefault();
     const headers = {
@@ -71,7 +71,7 @@ const Profile = () => {
         console.error(error);
       });
   };
-
+ 
   const changePasswordHandler = (id) => {
     const headers = {
       "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const Profile = () => {
         console.error(error);
       });
   };
-
+ 
   return (
     <div className="w-full mx-auto my-8 flex justify-between items-start">
       {data && (
@@ -123,7 +123,7 @@ const Profile = () => {
             </div>
             <button
               className={`${
-                showPass ? "bg-red-100 text-red-600" : "bg-blue-600 text-black"
+                showPass ? "bg-red-100 text-red-600" : "bg-blue-600 text-white"
               }  px-3 py-1 rounded mt-4`}
               onClick={() => setShowPass(!showPass)}
             >
@@ -172,5 +172,6 @@ const Profile = () => {
     </div>
   );
 };
-
+ 
 export default Profile;
+ 

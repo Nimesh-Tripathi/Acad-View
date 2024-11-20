@@ -19,7 +19,7 @@ const Home = () => {
     setLoad(true);
   }, [navigate, router.state]);
   return (  
-    <section className=" bg-slate-600 h-screen text-white">
+    <section className="h-screen">
       {load && (
         <>
           <Navbar />
@@ -61,7 +61,7 @@ const Home = () => {
               >
                 Material
               </li>
-
+ 
               <li
                 className={`text-center rounded-sm px-4 py-2 w-1/5 cursor-pointer ease-linear duration-300 hover:ease-linear hover:duration-300 hover:transition-all transition-all ${selectedMenu === "My Profile"
                     ? "border-b-2 pb-2 border-blue-500 bg-blue-100 rounded-sm text-black"
@@ -71,7 +71,7 @@ const Home = () => {
               >
                 My Profile
               </li>
-
+ 
             </ul>
             {selectedMenu === "Timetable" && <Timetable />}
             {selectedMenu === "Marks" && <Marks />}
@@ -85,5 +85,5 @@ const Home = () => {
     </section>
   );
 };
-
+ 
 export default Home;

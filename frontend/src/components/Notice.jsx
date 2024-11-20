@@ -22,7 +22,7 @@ const Notice = () => {
     type: "student",
     link: "",
   });
-
+ 
   const getNoticeHandler = () => {
     let data = {};
     if (router.pathname.replace("/", "") === "student") {
@@ -53,7 +53,7 @@ const Notice = () => {
         toast.error(error.response.data.message);
       });
   };
-
+ 
   useEffect(() => {
     let data = {};
     if (router.pathname.replace("/", "") === "student") {
@@ -84,7 +84,7 @@ const Notice = () => {
         toast.error(error.response.data.message);
       });
   }, [router.pathname]);
-
+ 
   const addNoticehandler = (e) => {
     e.preventDefault();
     toast.loading("Adding Notice");
@@ -110,7 +110,7 @@ const Notice = () => {
         toast.error(error.response.data.message);
       });
   };
-
+ 
   const deleteNoticehandler = (id) => {
     toast.loading("Deleting Notice");
     const headers = {
@@ -134,7 +134,7 @@ const Notice = () => {
         toast.error(error.response.data.message);
       });
   };
-
+ 
   const updateNoticehandler = (e) => {
     e.preventDefault();
     const headers = {
@@ -159,7 +159,7 @@ const Notice = () => {
         toast.error(error.response.data.message);
       });
   };
-
+ 
   const setOpenEditSectionHandler = (index) => {
     setEdit(true);
     setOpen(!open);
@@ -171,15 +171,15 @@ const Notice = () => {
     });
     setId(notice[index]._id);
   };
-
+ 
   const openHandler = () => {
     setOpen(!open);
     setEdit(false);
     setData({ title: "", description: "", type: "student", link: "" });
   };
-
+ 
   return (
-    <div className="w-full mx-auto flex justify-center items-start flex-col my-10 text-white">
+    <div className="w-full mx-auto flex justify-center items-start flex-col my-10">
       <div className="relative flex justify-between items-center w-full">
         <Heading title="Notices" />
         {(router.pathname === "/admin") &&
@@ -317,7 +317,7 @@ const Notice = () => {
           {edit && (
             <button
               onClick={updateNoticehandler}
-              className="bg-blue-500 text-white mt-6 px-6 rounded text-lg py-2 hover:bg-blue-600"
+              className="bg-blue-500 mt-6 px-6 rounded text-lg py-2 hover:bg-blue-600"
             >
               Update Notice
             </button>
@@ -325,7 +325,7 @@ const Notice = () => {
           {!edit && (
             <button
               onClick={addNoticehandler}
-              className="bg-blue-500 text-white mt-6 px-6 rounded text-lg py-2 hover:bg-blue-600"
+              className="bg-blue-500 mt-6 px-6 rounded text-lg py-2 hover:bg-blue-600"
             >
               Add Notice
             </button>
@@ -335,5 +335,5 @@ const Notice = () => {
     </div>
   );
 };
-
+ 
 export default Notice;

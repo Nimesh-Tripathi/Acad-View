@@ -4,7 +4,7 @@ import Heading from "../../components/Heading";
 import toast from "react-hot-toast";
 import { BiArrowBack } from "react-icons/bi";
 import { baseApiURL } from "../../baseUrl";
-
+ 
 const Marks = () => {
   const [subject, setSubject] = useState();
   const [branch, setBranch] = useState();
@@ -37,7 +37,7 @@ const Marks = () => {
         toast.error(error.message);
       });
   };
-
+ 
   const submitMarksHandler = () => {
     let container = document.getElementById("markContainer");
     container.childNodes.forEach((enroll) => {
@@ -47,7 +47,7 @@ const Marks = () => {
       );
     });
   };
-
+ 
   const setStudentMarksHandler = (enrollment, value) => {
     const headers = {
       "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const Marks = () => {
         toast.error(error.message);
       });
   };
-
+ 
   const getBranchData = () => {
     const headers = {
       "Content-Type": "application/json",
@@ -96,7 +96,7 @@ const Marks = () => {
         toast.error(error.message);
       });
   };
-
+ 
   const getSubjectData = () => {
     toast.loading("Loading Subjects");
     axios
@@ -114,16 +114,16 @@ const Marks = () => {
         toast.error(error.message);
       });
   };
-
+ 
   useEffect(() => {
     getBranchData();
     getSubjectData();
   }, []);
-
+ 
   const resetValueHandler = () => {
     setStudentData();
   };
-
+ 
   return (
     <div className="w-full mx-auto flex justify-center items-start flex-col my-10 text-black">
       <div className="relative flex justify-between items-center w-full">
@@ -252,11 +252,12 @@ const Marks = () => {
               return (
                 <div
                   key={student.enrollmentNo}
-                  className="w-[30%] flex justify-between items-center border-2 border-blue-500 rounded"
+                  className="w-[80%] flex justify-between items-center border-2 border-blue-500 rounded"
                   id={student.enrollmentNo}
                 >
                   <p className="text-lg px-4 w-1/2 bg-blue-50">
-                    {student.enrollmentNo}
+                    {student.enrollmentNo}:&nbsp;
+                      {student.firstName} {student.middleName} {student.lastName}
                   </p>
                   <input
                     type="number"
@@ -279,5 +280,6 @@ const Marks = () => {
     </div>
   );
 };
-
+ 
 export default Marks;
+ 

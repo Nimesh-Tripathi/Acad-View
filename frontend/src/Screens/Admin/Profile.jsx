@@ -45,7 +45,7 @@ const Profile = () => {
         console.error(error);
       });
   }, [dispatch, router.state.loginid, router.state.type]);
-
+ 
   const checkPasswordHandler = (e) => {
     e.preventDefault();
     const headers = {
@@ -71,7 +71,7 @@ const Profile = () => {
         console.error(error);
       });
   };
-
+ 
   const changePasswordHandler = (id) => {
     const headers = {
       "Content-Type": "application/json",
@@ -97,9 +97,9 @@ const Profile = () => {
         console.error(error);
       });
   };
-
+ 
   return (
-    <div className="w-full mx-auto my-8 flex justify-between items-start text-white">
+    <div className="w-full mx-auto my-8 flex justify-between items-start">
       {data && (
         <>
           <div>
@@ -168,5 +168,5 @@ const Profile = () => {
     </div>
   );
 };
-
+ 
 export default Profile;

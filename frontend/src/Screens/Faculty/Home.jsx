@@ -19,9 +19,9 @@ const Home = () => {
     }
     setLoad(true);
   }, [navigate, router.state]);
-
+ 
   return (
-    <section className=" bg-slate-600 h-screen text-white">
+    <section>
       {load && (
         <>
           <Navbar />
@@ -101,5 +101,5 @@ const Home = () => {
     </section>
   );
 };
-
+ 
 export default Home;

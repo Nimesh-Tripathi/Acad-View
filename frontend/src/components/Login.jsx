@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { baseApiURL } from "../baseUrl";
-
+ 
 const Login = () => {
   const navigate = useNavigate();
   const [selected, setSelected] = useState("Student");
@@ -33,7 +33,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="h-[100vh] w-full flex justify-between items-center bg-slate-600 text-white">
+    <div className="h-[100vh] w-full flex justify-between items-center">
       <img
         className="w-[60%] h-[100vh] object-cover"
         src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -55,7 +55,7 @@ const Login = () => {
               type="number"
               id="eno"
               required
-              className="bg-white outline-none border-2 border-gray-400 py-2 px-4 rounded-md w-full focus:border-blue-500 text-black"
+              className="bg-white outline-none border-2 border-gray-400 py-2 px-4 rounded-md w-full focus:border-blue-500"
               {...register("loginid")}
             />
           </div>
@@ -67,7 +67,7 @@ const Login = () => {
               type="password"
               id="password"
               required
-              className="bg-white outline-none border-2 border-gray-400 py-2 px-4 rounded-md w-full focus:border-blue-500 text-black"
+              className="bg-white outline-none border-2 border-gray-400 py-2 px-4 rounded-md w-full focus:border-blue-500"
               {...register("password")}
             />
           </div>
@@ -113,5 +113,5 @@ const Login = () => {
     </div>
   );
 };
-
+ 
 export default Login;
